@@ -8,11 +8,8 @@ public class EmployeeWage
 	public static final int NUM_OF_WORKING_DAYS = 20;
 	public static final int MAX_HRS_IN_MONTH = 100;
 	
-	public static void main(String[] args)
+	public static int EmpWage()
 	{
-		// TODO Auto-generated method stub
-		System.out.println("###..Welcome to Employee Wage Computation..###");
-		
 		int empHrs=0, totalEmpHrs = 0, totalWorkingDays = 0;
 		while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
 		{
@@ -28,10 +25,13 @@ public class EmployeeWage
 	      			empHrs = 0; break;
 			}
 			totalEmpHrs += empHrs;
-	      
-			System.out.println("Day#: " + totalWorkingDays + " Emp Hr: " +empHrs);
 	    }
-		int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;	
-		System.out.println("Total Emp Wage: " + totalEmpWage);	        
+		totalWorkingDays = totalEmpHrs * EMP_RATE_PER_HOUR;
+		return totalWorkingDays;
 	 }
+	public static void main(String[] args)
+	{	
+		System.out.println("\n..####...Welcome to Employee Wage Computation...####..");
+		System.out.println("\n\t\tTotal Emp Salary: " +EmpWage());
+	}
 }
