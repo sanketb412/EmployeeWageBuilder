@@ -45,11 +45,8 @@ public class EmployeeWage {
 
 	public static void main(String[] args) {
 		System.out.println("\n..####...Welcome to Employee Wage Computation...####..");
-		EmployeeWage dMart = new EmployeeWage("Dmart", 20,2,10);		
+		EmployeeWage dMart = new EmployeeWage("Dmart", 20,29,100);		
 		dMart.computeEmpWage();
 		System.out.println(dMart);
-		EmployeeWage reliance = new EmployeeWage("Reliance", 10,4,20);
-		reliance.computeEmpWage();
-		System.out.println(reliance);
 		}
 }
