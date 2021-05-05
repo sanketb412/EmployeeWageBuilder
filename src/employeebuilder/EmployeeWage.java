@@ -1,10 +1,25 @@
 package employeebuilder;
 
+import java.util.Scanner;
+
 public class EmployeeWage {
 	public static final int PART_TIME = 1;
 	public static final int FULL_TIME = 2;
 
-	public static int EmpWage(String company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth) {
+	private String company;
+	private int empRatePerHour;
+	private int numOfWorkingDays;
+	private int maxHoursPerMonth;
+	private int totalEmpWage;
+	
+	public EmployeeWage(String company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth) {
+	this.company = company;
+	this.empRatePerHour = empRatePerHour;
+	this.numOfWorkingDays = numOfWorkingDays;
+	this.maxHoursPerMonth = maxHoursPerMonth;
+	}
+	
+	public void computeEmpWage() {
 		int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
 		while (totalEmpHrs <= maxHoursPerMonth && totalWorkingDays < numOfWorkingDays) {
 			totalWorkingDays++;
@@ -26,12 +41,15 @@ public class EmployeeWage {
 		int totalEmpWage = totalEmpHrs * empRatePerHour;
 		System.out.println("\nTotal Emp Wage for Company " + company + " is: " + totalEmpWage + "\n");
 		System.out.println("------------------------------------------------");
-		return totalEmpWage;
 	}
 
 	public static void main(String[] args) {
 		System.out.println("\n..####...Welcome to Employee Wage Computation...####..");
-		EmpWage("DMart", 20, 20, 100);
-		EmpWage("Reliance", 30, 15, 150);
-	}
+		EmployeeWage dMart = new EmployeeWage("Dmart", 20,2,10);		
+		dMart.computeEmpWage();
+		System.out.println(dMart);
+		EmployeeWage reliance = new EmployeeWage("Reliance", 10,4,20);
+		reliance.computeEmpWage();
+		System.out.println(reliance);
+		}
 }
